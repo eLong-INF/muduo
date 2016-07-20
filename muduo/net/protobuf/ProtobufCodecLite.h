@@ -174,6 +174,12 @@ class ProtobufCodecLiteT
     codec_.send(conn, message);
   }
 
+  void send(const TcpConnectionPtr& conn,
+            const ::google::protobuf::Message& message)
+  {
+    codec_.send(conn, message);
+  }
+
   void onMessage(const TcpConnectionPtr& conn,
                  Buffer* buf,
                  Timestamp receiveTime)
